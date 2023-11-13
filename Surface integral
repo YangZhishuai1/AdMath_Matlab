@@ -1,0 +1,24 @@
+syms phi theta ;
+syms a1 a2 a3 a4 a5 a6;
+
+R=1;
+
+% 定义球坐标参数化表示
+x = R * sin(phi) * cos(theta);
+y = R * sin(phi) * sin(theta);
+z = R * cos(phi);
+
+% 定义被积函数
+f = a1*x^4 + a2*y^4 + a3*z^4+ 3*a4*x^2*y^2 + 3*a5*y^2*z^2 + 3*a6*x^2*z^2;
+
+% 计算曲面积分
+integrand = f * R^2 * sin(phi);
+
+% 第一步积分
+result_phi = int(integrand, phi, 0, pi);
+
+% 第二步积分
+result = int(result_phi, theta, 0, 2*pi);
+
+% 显示结果
+disp(['曲面积分的结果: ', char(result)]);
