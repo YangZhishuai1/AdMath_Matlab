@@ -1,0 +1,35 @@
+syms x y;
+
+% 定义目标函数
+f = x^2 + y^2 -x*y+ 9*x- 6*y +20;
+
+% 计算一阶偏导数
+df_dx = diff(f, x);
+df_dy = diff(f, y);
+
+% 计算二阶偏导数
+d2f_dx2 = diff(df_dx, x);
+d2f_dy2 = diff(df_dy, y);
+d2f_dxdy = diff(df_dx, y);
+
+% 计算三阶偏导数
+d3f_dx3 = diff(d2f_dx2, x);
+d3f_dy3 = diff(d2f_dy2, y);
+d3f_dxdy2 = diff(d2f_dxdy, x);
+
+% 输出结果
+disp('一阶偏导数:');
+disp(['df/dx: ', char(df_dx)]);
+disp(['df/dy: ', char(df_dy)]);
+
+disp('二阶偏导数:');
+disp(['d^2f/dx^2: ', char(d2f_dx2)]);
+disp(['d^2f/dy^2: ', char(d2f_dy2)]);
+disp(['d^2f/dxdy: ', char(d2f_dxdy)]);
+
+disp('三阶偏导数:');
+disp(['d^3f/dx^3: ', char(d3f_dx3)]);
+disp(['d^3f/dy^3: ', char(d3f_dy3)]);
+disp(['d^3f/dxdy^2: ', char(d3f_dxdy2)]);
+
+
