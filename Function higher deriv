@@ -1,0 +1,13 @@
+syms x;
+
+% 定义函数
+f = x^8;
+
+% 指定导数阶数
+max_order = 6;
+
+% 计算并显示各阶导数
+for order = 1:max_order
+    derivative_result = diff(f, x, order);
+    disp([num2str(order), ' 阶导数: ', char(derivative_result)]);
+end
