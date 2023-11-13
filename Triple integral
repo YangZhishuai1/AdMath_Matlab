@@ -1,0 +1,18 @@
+syms x y z;
+
+% 定义被积函数
+f = x * y * z;
+
+% 设置积分范围
+x_lower = 0;
+x_upper = y;
+y_lower = 0;
+y_upper = z;
+z_lower = 0;
+z_upper = 2;
+
+% 计算三重积分
+result = int(int(int(f, x, x_lower, x_upper), y, y_lower, y_upper), z, z_lower, z_upper);
+
+% 显示结果
+disp(['三重积分的结果: ', char(result)]);
