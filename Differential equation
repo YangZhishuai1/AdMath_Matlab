@@ -1,0 +1,17 @@
+syms x y(x)
+
+a=1;
+b=3;
+c=2;
+
+f(x)=0 ;
+% 定义微分方程
+ode = a* diff(y, x, 2) + b* diff(y, x) + c* y == f(x);
+
+
+% 求解微分方程
+solution = dsolve(ode);
+
+% 显示解
+disp('微分方程的解:');
+disp(solution);
