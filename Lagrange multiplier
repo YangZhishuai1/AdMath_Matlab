@@ -1,0 +1,26 @@
+syms x y lambda
+
+% 定义目标函数和约束条件
+f = 15+14*x+32*y-8*x*y-2*x^2-10*y^2;
+g = x+y-1.5;
+
+% 构建拉格朗日函数
+L = f + lambda * g;
+
+% 计算拉格朗日函数的偏导数
+grad_L = gradient(L, [x, y, lambda]);
+
+% 解方程组
+sol = solve(grad_L, [x, y, lambda]);
+
+% 从结构体中获取数值
+x_optimal = double(sol.x);
+y_optimal = double(sol.y);
+lambda_optimal = double(sol.lambda);
+
+% 输出结果
+disp('最优解:');
+disp(['x: ', num2str(x_optimal)]);
+disp(['y: ', num2str(y_optimal)]);
+disp(['lambda: ', num2str(lambda_optimal)]);
+disp(['最优解 f(x, y): ', num2str(eval(subs(f, [x, y], [x_optimal, y_optimal])))]);
