@@ -1,0 +1,13 @@
+syms x
+
+x0=0;
+n=3;
+
+% 定义函数
+f = exp(x);
+
+% 在 x=x0 处展开到n阶
+taylor_expansion_n_x0 = taylor(f, x, x0, 'Order', n);
+
+disp('e^x 在 x=x0 处的泰勒展开成n阶:');
+disp(taylor_expansion_n_x0);
