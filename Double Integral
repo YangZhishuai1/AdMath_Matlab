@@ -1,0 +1,16 @@
+syms x y;
+
+% 定义被积函数
+f = y/x;
+
+% 设置积分范围
+x_lower = 1;
+x_upper = 2;
+y_lower = x;
+y_upper = 2*x;
+
+% 计算二重积分
+result = int(int(f, y, y_lower, y_upper), x, x_lower, x_upper);
+
+% 显示结果
+disp(['二重积分的结果: ', char(result)]);
