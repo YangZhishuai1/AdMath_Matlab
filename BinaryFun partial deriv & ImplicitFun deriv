@@ -1,0 +1,16 @@
+syms x y ;
+
+% 定义二元函数
+f = y-2*x*atan(y/x);
+
+% 对 x 求偏导数
+df_dx = diff(f, x);
+
+% 对 y 求偏导数
+df_dy = diff(f, y);
+
+disp('二元函数 f 分别对 x 和 y 求偏导数:');
+disp(['偏导数 df/dx: ', char(df_dx)]);
+disp(['偏导数 df/dy: ', char(df_dy)]);
+
+%dy/dx= -( df_dx/df_dy );
