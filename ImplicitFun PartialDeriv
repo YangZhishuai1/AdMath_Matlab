@@ -1,0 +1,43 @@
+syms x y z;
+
+% 隐函数表达式
+F = z^3 - x^2 - y^2;
+
+% 计算偏导数Zx
+dz_dx = -diff(F, x) / diff(F, z);
+
+% 计算偏导数Zy
+dz_dy = -diff(F, y) / diff(F, z);
+
+% 计算偏导数Yz
+dy_dz = -diff(F, z) / diff(F, y);
+
+% 计算偏导数Yx
+dy_dx = -diff(F, x) / diff(F, y);
+
+% 计算偏导数Xz
+dx_dz = -diff(F, z) / diff(F, x);
+
+% 计算偏导数Xy
+dx_dy = -diff(F, y) / diff(F, x);
+
+
+% 显示结果
+disp('Zx:');
+disp(dz_dx);
+
+disp('Zy:');
+disp(dz_dy);
+
+disp('Yz:');
+disp(dy_dz);
+
+disp('Yx:');
+disp(dy_dx);
+
+disp('Xz:');
+disp(dx_dz);
+
+disp('Xy:');
+disp(dx_dy);
+
