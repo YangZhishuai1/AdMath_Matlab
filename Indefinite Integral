@@ -1,0 +1,12 @@
+syms x ;
+
+% 定义函数
+f = ( 2*exp(-x)*x ) / ( 1-x )^2;
+
+% 求不定积分
+int_result = int(f, x);
+
+% 显示结果
+disp(simplify(int_result));
+
+
