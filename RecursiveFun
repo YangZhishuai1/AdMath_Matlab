@@ -1,0 +1,83 @@
+% 已知数列定义
+n = 99999; % 你想要计算的项数
+
+% 初始化数列的第一项
+a = zeros(1, n);
+ a(1) = sqrt(2)/2;
+
+% 计算数列的每一项
+for i = 2:n
+   % a(i)=2*a(i-1);
+    a(i) = sqrt( 0.5+0.5*a(i-1) );
+end
+
+PAI=1;
+for i = 1:n
+    PAI=a(i)*PAI;
+end
+
+
+
+
+
+
+N = 6; % 你想要计算的项数
+
+% 初始化递归数列的第一项
+a = zeros(1, N);
+a(1) = 1;
+
+% 计算递归数列的每一项
+for n = 1:N-1
+    a(n+1) = 2*a(n) ;
+end
+
+% 求和
+SIGMA = sum(a);
+
+% 显示结果
+disp(['递归数列的和: ', num2str(SIGMA)]);
+
+
+
+
+
+
+
+
+syms x k;
+
+N=10;
+
+SUM=symsum( 1/( 2^(k-1)*(2*k-1) ),k,1,N );
+
+disp(SUM);
+
+% 指定输出格式，%.10f 表示小数点后显示 10 位数字
+formatSpec = '结果为 %.20f\n';
+
+% 使用 fprintf 输出结果
+fprintf(formatSpec, SUM);
+
+
+
+
+
+
+
+
+m = 1; % 第一重求和的上限
+n = 1; % 第二重求和的上限
+
+sum_result = 0;
+
+% 嵌套循环计算二重求和
+for i = 1:m
+    for j = 1:n
+        sum_result = sum_result + 1/( (4*n-1)^(2*m+1) );        
+        %sum_result = sum_result + 1/( (4*n-1)^(2*m+1) );
+    end
+end
+
+disp(['数列的二重求和结果为: ', num2str(sum_result)]);
+
