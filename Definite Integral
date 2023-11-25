@@ -1,0 +1,10 @@
+syms u x;
+
+% 定义函数
+f = u * sin(u);
+
+% 求定积分
+int_result = int(f, u, 0, x);
+
+% 显示结果
+disp(int_result);
