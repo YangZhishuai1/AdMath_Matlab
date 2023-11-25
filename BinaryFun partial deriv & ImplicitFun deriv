@@ -14,3 +14,23 @@ disp(['偏导数 df/dx: ', char(df_dx)]);
 disp(['偏导数 df/dy: ', char(df_dy)]);
 
 %dy/dx= -( df_dx/df_dy );
+
+
+
+syms x y;
+
+% 隐函数表达式
+F = y^2-x;
+
+% 计算一阶导数
+dy_dx_1st = -diff(F, x) / diff(F, y);
+
+% 计算二阶导数
+dy_dx_2nd = diff(dy_dx_1st, x);
+
+% 显示结果
+disp(dy_dx_1st);
+
+
+disp(dy_dx_2nd);
+
